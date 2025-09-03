@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/arpitag1011/react-selenium-tests.git'
+                git branch: 'master', url: 'https://github.com/arpitag1011/react-selenium-tests.git'
             }
         }
 
@@ -29,7 +29,7 @@ pipeline {
 
         stage('Publish Results') {
             steps {
-                junit '**/test-results.xml' // if using JUnit reporter
+                junit '**/test-results.xml'
             }
         }
     }
