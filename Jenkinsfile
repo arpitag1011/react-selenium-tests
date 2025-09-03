@@ -10,20 +10,20 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Start App') {
             steps {
-                sh 'nohup npm start &'
+                bat 'nohup npm start &'
                 sleep 20
             }
         }
 
         stage('Run Selenium Tests') {
             steps {
-                sh 'npm run test:selenium || true'
+                bat 'npm run test:selenium || true'
             }
         }
 
