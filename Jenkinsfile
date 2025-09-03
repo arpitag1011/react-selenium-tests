@@ -16,14 +16,14 @@ pipeline {
 
         stage('Start App') {
             steps {
-                bat 'nohup npm start &'
+                bat 'start /B npm start'
                 sleep 20
             }
         }
 
         stage('Run Selenium Tests') {
             steps {
-                bat 'npm run test:selenium || true'
+                bat 'npm run test:selenium || exit 0'
             }
         }
 
